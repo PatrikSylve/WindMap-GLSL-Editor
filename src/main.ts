@@ -7,6 +7,7 @@ import { environment } from './environments/environment';
 import 'codemirror/mode/javascript/javascript';
 
 import 'codemirror/mode/clike/clike';
+import './cm-mode/glsl_mode';
 
 if (environment.production) {
   enableProdMode();

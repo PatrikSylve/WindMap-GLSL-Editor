@@ -28,6 +28,7 @@ export class GlslEditorComponent implements OnInit {
     this.smhiService.getDefaultShader().subscribe((data) => {
       this.content = data;
       this.editor.writeValue(this.content);
+      
  
     });
   }
