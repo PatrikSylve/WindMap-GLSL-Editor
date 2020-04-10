@@ -30,4 +30,9 @@ export class SmhiService {
     //return this.http.get('https://jsonplaceholder.typicode.com/albums');
     return 0;//this.getValidTime();
   }
+
+
+  getDefaultShader() {
+    return this.http.get('./../assets/shaders/drawFrag.txt', {responseType: 'text'});
+  }
 }

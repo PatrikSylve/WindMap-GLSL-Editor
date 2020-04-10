@@ -5,6 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import 'codemirror/mode/javascript/javascript';
+
 import 'codemirror/mode/clike/clike';
 
 if (environment.production) {

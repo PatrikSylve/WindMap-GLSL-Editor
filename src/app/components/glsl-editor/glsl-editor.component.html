@@ -1,7 +1,5 @@
-<ngx-codemirror
-  [options]="{
-    lineNumbers: true,
-    theme: 'monokai',
-    mode: 'text/x-c'
-  }"
+<div><ngx-codemirror #editor
+(click) ="test($event.value)"
+  [options]="options"
 ></ngx-codemirror>
+</div>
