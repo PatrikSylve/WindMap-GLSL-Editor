@@ -1,5 +1,5 @@
 <div><ngx-codemirror #editor
-(click) ="test($event.value)"
   [options]="options"
+  (cursorActivity) = "updateShaderProgram()"
 ></ngx-codemirror>
 </div>

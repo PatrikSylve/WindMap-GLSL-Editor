@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GlslEditorComponent } from './glsl-editor.component';
-import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 
 describe('GlslEditorComponent', () => {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output } from '@angular/core';
 import { FileUploadService } from 'src/app/services/file-upload.service';
 import * as codeMirror from 'codemirror'; 
 import { CodemirrorComponent } from '@ctrl/ngx-codemirror';
@@ -12,28 +12,40 @@ import { SmhiService } from 'src/app/services/smhi.service';
 
 export class GlslEditorComponent implements OnInit {
   @ViewChild('editor') editor: CodemirrorComponent;
-  somemodel:any = "hejs";
 
   content: string;
   options: any = {
     lineNumbers: true,
     theme: 'monokai',
-    mode: 'text/x-c'
+    mode: 'text/x-c',
+    name: "hejsan"
   }
 
+
+
   constructor(private smhiService: SmhiService) {
+    smhiService.getDefaulShader().subscribe( shader => {
+      this.content = shader; 
+      this.setDefault();
+    }); 
   }
 
   ngOnInit() {
-    this.smhiService.getDefaultShader().subscribe((data) => {
-      this.content = data;
-      this.editor.writeValue(this.content);
-      
- 
-    });
+        
   }
   ngAfterViewInit(){
+    
+  }
+
+  setDefault() {
+    this.editor.writeValue(this.content);
   }
  
+  updateShaderProgram() {
+    //this.testP.emit()
+    if (this.content !== this.editor.value){
+          console.log("hej");
+    }
+  }
 
 }

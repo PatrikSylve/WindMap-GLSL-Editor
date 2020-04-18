@@ -2,17 +2,16 @@
     <div class="conainer-fluid">
         <mgl-map [style]="'mapbox://styles/mapbox/dark-v10'" [zoom]="zoom" [center]="center"
             (load)="loadMap($event)" style="height: 100%; width: 100%; position: fixed; top:0; left:0 !important;"
-            (click)="update()">
+            (click)="update()" (testF) = "testCom()">
            
         </mgl-map>
     </div>
 
     <div class="row">
-        <div class="col">
-        </div>
-        <div class="col shader-box" cdkDrag>
-            <app-glsl-editor class="shader-component">
-            </app-glsl-editor>
-        </div>
+        
+            <div class="shader-box float-right" cdkDrag>
+           <app-glsl-editor class="shader-component">
+            </app-glsl-editor> 
+            </div>
     </div>
 </div>
